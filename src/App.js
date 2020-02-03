@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import ListItems from './ListItems';
 
 class App extends Component {
 
@@ -29,8 +30,8 @@ class App extends Component {
     e.preventDefault();
     const newItem = this.state.currentItem;
     console.log(newItem);
-    if(newItem.text != "") {
-      const newItems = [...this.state.items, newItems];
+    if(newItem.text !== "") {
+      const newItems = [...this.state.items, newItem];
       this.setState({
         items: newItems,
         currentItem:{
@@ -47,6 +48,7 @@ class App extends Component {
       <header>
         <h1>TODO App</h1>
       </header>
+      <ListItems items={this.state.items} />
       <form id="todo-form" onSubmit={this.addItem}>
         <input type="text" placeholder="Text.." value={this.state.currentItem.text} onChange={this.handleInput}/>
       </form>
