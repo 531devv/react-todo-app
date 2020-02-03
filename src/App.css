@@ -1,38 +1,77 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Gidole;
+  box-sizing: border-box;
+}
+
+body {
+  display: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#e66465, #9198e5);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
 .App {
+  height: 500px;
+  width: 500px;
+  background-color: #fff;
+  margin: 100px auto auto;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
+
+header {
+  width: 100%;
+  height: 50px;
   text-align: center;
+  color: #4b4b4b;
+  border-bottom: 1px solid #4b4b4b;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header h1 {
+  padding-top: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#todo-form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+#todo-form input {
+  height: 50px;
+  width: 450px;
+  border-radius: 10px;
+  border-width: 1px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border: none;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#todo-form input:focus {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  outline-width: 0;
 }
+
+#todo-form button {
+  width: 50px;
+  background-color: rgb(30, 182, 0);
+  border: none;
+  border-radius: 50%;
+  color: #FFF;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
