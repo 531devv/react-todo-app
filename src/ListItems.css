@@ -15,8 +15,17 @@
     padding-top: 12px;
     padding-left: 10px;
     text-transform: capitalize;
+    position: relative;
 }
 
 .list:first-child {
     margin-top: 10px;
+}
+
+.list-container span {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    color: red;
+    cursor: pointer;
 }

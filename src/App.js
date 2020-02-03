@@ -15,6 +15,7 @@ class App extends Component {
     }
     this.handleInput = this.handleInput.bind(this);
     this.addItem = this.addItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
 
   handleInput(e) {
@@ -42,7 +43,7 @@ class App extends Component {
     }
   }
 
-  deleteitem(key) {
+  deleteItem(key) {
     const filteredItems = this.state.items.filter(item => item.key !== key);
     this.setState({
       items: filteredItems
@@ -55,7 +56,7 @@ class App extends Component {
       <header>
         <h1>TODO App</h1>
       </header>
-      <ListItems items={this.state.items} />
+      <ListItems items={this.state.items} deleteItem={this.deleteItem} />
       <form id="todo-form" onSubmit={this.addItem}>
         <input type="text" placeholder="Text.." value={this.state.currentItem.text} onChange={this.handleInput}/>
       </form>
